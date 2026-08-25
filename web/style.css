@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+}
+
+.top-bar {
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px;
+    background: #ffffff;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.app-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.file-name {
+    font-size: 14px;
+    color: #666;
+}
+
+.top-actions {
+    display: flex;
+    gap: 8px;
+}
+
+button,
+select {
+    border: 1px solid #cccccc;
+    background: white;
+    border-radius: 5px;
+    padding: 7px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover,
+select:hover {
+    background: #f0f0f0;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    background: #fafafa;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.separator {
+    width: 1px;
+    height: 25px;
+    background: #cccccc;
+    margin: 0 5px;
+}
+
+.editor-container {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    background: white;
+}
+
+.line-numbers {
+    width: 50px;
+    padding: 18px 10px;
+    text-align: right;
+    background: #f7f7f7;
+    color: #888;
+    border-right: 1px solid #dddddd;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    user-select: none;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.editor {
+    flex: 1;
+    padding: 18px;
+    outline: none;
+    overflow: auto;
+    font-size: 16px;
+    line-height: 24px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.status-bar {
+    min-height: 35px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 18px;
+    background: #ffffff;
+    border-top: 1px solid #dcdcdc;
+    font-size: 13px;
+}
+
+#clock {
+    margin-left: auto;
+    font-weight: bold;
+}
+
+body.dark-mode {
+    background: #1e1e1e;
+    color: #eeeeee;
+}
+
+.dark-mode .top-bar,
+.dark-mode .toolbar,
+.dark-mode .status-bar {
+    background: #252526;
+    border-color: #444;
+}
+
+.dark-mode .editor-container,
+.dark-mode .editor {
+    background: #1e1e1e;
+    color: white;
+}
+
+.dark-mode .line-numbers {
+    background: #252526;
+    border-color: #444;
+    color: #999;
+}
+
+.dark-mode button,
+.dark-mode select {
+    background: #333;
+    color: white;
+    border-color: #555;
+}
+
+.dark-mode button:hover,
+.dark-mode select:hover {
+    background: #444;
+}
+
+.dark-mode .file-name {
+    color: #bbbbbb;
+}
+
+@media (max-width: 700px) {
+    .top-bar {
+        height: auto;
+        padding: 10px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .toolbar {
+        padding: 8px;
+        overflow-x: auto;
+    }
+
+    .status-bar {
+        gap: 10px;
+        padding: 0 10px;
+        font-size: 11px;
+    }
+
+    .line-numbers {
+        width: 40px;
+    }
+}

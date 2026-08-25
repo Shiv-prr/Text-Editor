@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="top-bar">
+        <div class="app-title">📝 Text Editor</div>
+
+        <div class="file-name" id="fileName">
+            Untitled
+        </div>
+
+        <div class="top-actions">
+            <button id="newBtn">New</button>
+            <button id="openBtn">Open</button>
+            <button id="saveBtn">Save</button>
+
+            <input
+                type="file"
+                id="fileInput"
+                accept=".txt,.md,.py,.html,.css,.js"
+                hidden>
+        </div>
+    </header>
+
+    <div class="toolbar">
+
+        <button id="undoBtn" title="Undo">↶</button>
+        <button id="redoBtn" title="Redo">↷</button>
+
+        <div class="separator"></div>
+
+        <button id="boldBtn"><b>B</b></button>
+        <button id="italicBtn"><i>I</i></button>
+        <button id="underlineBtn"><u>U</u></button>
+
+        <div class="separator"></div>
+
+        <select id="fontFamily">
+            <option value="Arial">Arial</option>
+            <option value="Helvetica">Helvetica</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Times New Roman">Times New Roman</option>
+        </select>
+
+        <select id="fontSize">
+            <option value="14">14 px</option>
+            <option value="16" selected>16 px</option>
+            <option value="18">18 px</option>
+            <option value="20">20 px</option>
+            <option value="24">24 px</option>
+        </select>
+
+        <div class="separator"></div>
+
+        <button id="findBtn">Find</button>
+        <button id="darkModeBtn">🌙</button>
+
+    </div>
+
+    <main class="editor-container">
+        <div id="lineNumbers" class="line-numbers">1</div>
+        <div
+            id="editor"
+            class="editor"
+            contenteditable="true"
+            spellcheck="true"
+        ></div>
+    </main>
+
+    <footer class="status-bar">
+        <span id="wordCount">Words: 0</span>
+        <span id="charCount">Characters: 0</span>
+        <span id="cursorPosition">Ln: 1, Col: 1</span>
+        <span id="clock">00:00:00</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
